@@ -12,9 +12,9 @@ import org.junit.runner.RunWith;
         },
         monochrome=true,
         features = "./src/test/resources/features",
-        glue = "stepdefinitions",
+        glue = {"stepdefinitions","hooks"},
         dryRun = false,
-        tags = "@data_tables"
+        tags = "@failed_tests"
 )public class Runner {
 }
 /*
@@ -44,3 +44,22 @@ import org.junit.runner.RunWith;
     How do you parametrize the feature files?How do you get the data from the feature file? How do you make the test cases more reusable in cucumber.What is your strategy?
     String “” makes the data dynamic. We can use Scenario Outline, data tables as well
 */
+
+/*
+User Story : US167854_manager_login_test
+NAME:user should be able to login with manager credentials
+AC: Given user is on the home page
+When user navigates to the login page
+And enter username
+And enter password
+And click on login button
+Then verify the login is successful
+ARTIFACT:
+url : https://www.bluerentalcars.com/
+Credentials:
+                {"sam.walker@bluerentalcars.com","c!fas_art"},
+                {"kate.brown@bluerentalcars.com","tad1$Fas"},
+                {"raj.khan@bluerentalcars.com","v7Hg_va^"},
+                {“pam.raymond@bluerentalcars.com","Nga^g6!"}
+NOTE: Use scenario outline
+ */
