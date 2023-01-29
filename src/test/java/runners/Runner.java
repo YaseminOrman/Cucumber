@@ -8,15 +8,19 @@ import org.junit.runner.RunWith;
                 "pretty",
                 "html:target/default-cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
-                "junit:target/xml-report/cucumber.xml"
+                "junit:target/xml-report/cucumber.xml" ,
+                "rerun:target/failedRerun.txt"
         },
         monochrome=false,
         features = "./src/test/resources/features",
         glue = {"stepdefinitions","hooks"},
         dryRun = false,
-        tags = "@MedunnaRoom"
+        tags = "@failed_tests"
 )public class Runner {
 }
+
+
+
 /*
  features = "./src/test/resources/features",//PATH OF FEATURES FOLDER
  glue = "stepdefinitions", //PATH OF STEP DEFINITIONS
